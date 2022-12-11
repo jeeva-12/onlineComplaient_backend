@@ -41,10 +41,17 @@ public class Usercontroller {
             user.put("status","failed");
         }else{
             user.put("status","success");
+            user.put("userId",String.valueOf(result.get(0).getId()));
         }
         return user;
     }
+ @CrossOrigin(origins = "*")
+    @PostMapping(path = "/userbyid",consumes = "application/json",produces = "application/json" )
+    public List<UserInfo> FindUserbyId(@RequestBody UserInfo u){
+        List<UserInfo> result=(List<UserInfo>) dao.FindUserById(String.valueOf(u.getId()));
+        return result;
 
+ }
 
 
 }
