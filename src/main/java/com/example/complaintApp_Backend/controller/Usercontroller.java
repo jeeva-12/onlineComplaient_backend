@@ -16,7 +16,7 @@ public class Usercontroller {
     @CrossOrigin(origins = "*")
     @GetMapping("/")
     public String HomePage(){
-        return "Welcome Page";
+        return "Home Page";
     }
 
     @CrossOrigin(origins = "*")
